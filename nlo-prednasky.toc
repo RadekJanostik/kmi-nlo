@@ -1,0 +1,3 @@
+\contentsline {section}{\numberline {1.}P\IeC {\v r}edn\IeC {\'a}\IeC {\v s}ka 1 - jemn\IeC {\'y} \IeC {\'u}vod}{1}
+\contentsline {subsection}{\numberline {1.1.}Form\IeC {\'a}ln\IeC {\'\i } logika}{1}
+\contentsline {subsection}{\numberline {1.2.}Odli\IeC {\v s}nosti logik}{1}

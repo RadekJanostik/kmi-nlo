@@ -46,6 +46,65 @@ z přednášek předmětu KMI/NLO. Přednášel \link{doc. Vilém Vychodil PhD}{
 
 \begin{document}
 \maketitle
+\section{Přednáška 1 - jemný úvod}
+\subsection{Formální logika} - studium vyplývání $\rightarrow$ formalizuje výroky, výrazy přirozeného jazyka $\rightarrow$ formule. Definuje se, že formule je/není důsledkem jiných formulí.
+
+\subsection{Odlišnosti logik}
+\begin{enumerate}
+\item Co vše popisuje jazyk - tj. co jsme schopni vyjádřit pomocí formulí.
+
+  Př.:
+  \begin{enumerate}
+    \item Výroková logika - zabývá se výroky - neformálně výraz, o kterém se uvažuje, že je pravdivý či ne. 
+
+      Atomická formule - nemůže se dělit na podvýrazy pomocí spojek. Nahrazují je výrokové symboly
+
+      Složitější formule - 1)Výrokový symbol je formule.
+
+			   2) Je-li $\varphi$ formule, pak i $\neg \varphi$ je formule.
+
+			   3) Jsou-li $\varphi ,\psi$ formule, pak i $\varphi \Rightarrow \psi$ je formule.
+  \item Predikátová logika - zabývá se (mj.) strukturou výroků
+
+      $(\forall x)(\forall y) (x \leq y \Rightarrow f(x) \leq f(y))$ - formule jazyka, kde $R = \{\leq\}$, $F = \{f\}$
+
+  \item Modální logiky - formalizují modality - "muset", "moci" \dots
+
+      Modální výroková - $\square$ \dots musí, $\diamond$ \dots může.
+
+	Formule: Je-li $\varphi$ formule, pak i $\square\varphi$ a $\diamond\varphi$ jsou formule.
+
+  Paradox Arnošta Večerky: \uv{Když mám 10 korun, koupím si čokoládu.}:  $\varphi \Rightarrow\psi$
+
+  \uv{Když mám 10 korun, koupím si bonbon.}: $\varphi \Rightarrow \chi$
+
+  $T=\{\varphi\Rightarrow\psi , \varphi\Rightarrow\chi\}$  $T \vdash \varphi\Rightarrow(\psi \wedge \chi)$
+    
+Modální logika dodá \uv{může}.
+  $T=\{\varphi\Rightarrow\diamond\psi,\varphi\Rightarrow\diamond\chi\}$ $T\vdash\varphi\Rightarrow(\diamond\psi\wedge\diamond\chi)$. Pozor: $T \not\vdash \varphi\Rightarrow\diamond (\psi\wedge\chi)$
+  \end{enumerate}
+
+\item Tím, jak zavádí vyplývání
+  \begin{enumerate}
+    \item Sémantické - navrhneme interpretaci formulí.
+
+    VL: zavedeme ohodnocení: $e: V\rightarrow\{0,1\}$ $||\varphi||_{e}$ \dots
+
+    PL: $\langle R, F, \sigma\rangle \rightarrow \mathbb{M}=\langle M, R^{M}, F^{M}\rangle$ $||\varphi||_{M,v}$ \dots $T \models \varphi$
+
+    mod. VL: $\square\varphi , \diamond\varphi$ - Kripkeho struktura - $\mathbb{K} = \langle W, r, e\rangle$ 
+
+  $r\subseteq W \times W$ $\langle w_{1},w_{2}\rangle \in r$ \dots $w_{2}$ je dosažitelný z $w_{1}$ 
+
+$e: W \times V \rightarrow \{0,1\}$
+
+$||\square\varphi||_{\mathbb{K},w} = 1$ pokud \underline{pro každý} $w'\in W$ platí: pokud $\langle w, w'\rangle\in r$ pak $||\varphi||_{\mathbb{K},w'}=1$
+
+$||\diamond\varphi||_{\mathbb{K},w} = 1$ \dots existuje \dots
+
+  \item Syntaktické
+  \end{enumerate}
+\end{enumerate}
 
 
 %\newpage
