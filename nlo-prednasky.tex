@@ -1,0 +1,54 @@
+
+\documentclass[10pt, a4paper, titlepage]{article}
+
+\usepackage[utf8]{inputenc}				% napsáno v UTF-8
+\usepackage[tables,figures]{upreport}	% UPOL styl
+\usepackage{upstyles}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{alltt}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\title{KMI/NLO  -- Neklasické logiky}
+\author{\normalsize{Radek Janoštík (radek.janostik01@upol.cz)}}
+\date{\today}
+
+\docinfo{Radek Janoštík}{KMI/NLO  -- Neklasické logiky}
+
+\newtheoremstyle{note}
+{15pt}
+{15pt}
+{}
+{}
+{\bfseries}
+{:}
+{.5em}
+{}
+\theoremstyle{note}
+\newtheorem{dukaz}{Důkaz}
+\newtheorem{veta}{Věta}
+\newtheorem{definice}{Definice}
+\newtheorem{priklad}{Příklad}
+\newtheorem{poznamka}{Poznámka}
+\newtheorem{dusledek}{Důsledek}
+
+
+\abstract{
+Tento dokument je pouze přepisem zápisků a poznámek
+z přednášek předmětu KMI/NLO. Přednášel \link{doc. Vilém Vychodil PhD}{http://vychodil.inf.upol.cz/}.}
+
+\pagestyle{empty}
+\makeindex
+
+\begin{document}
+\maketitle
+
+
+%\newpage
+\renewcommand{\indexcolumns}{3}
+\printindex
+\end{document}
