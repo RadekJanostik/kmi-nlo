@@ -102,12 +102,119 @@ $||\square\varphi||_{\mathbb{K},w} = 1$ pokud \underline{pro každý} $w'\in W$ 
 
 $||\diamond\varphi||_{\mathbb{K},w} = 1$ \dots existuje \dots
 
-  \item Syntaktické
+  \item Syntaktické \dots důkaz
+
+  kl. VL: Pravidlo: z $\varphi, \varphi\Rightarrow\psi$ odvoď $\psi$
+
+    $(Ax): \varphi\Rightarrow(\psi\Rightarrow\varphi)$
+
+    $(\varphi\Rightarrow(\varphi\Rightarrow\chi))\Rightarrow((\varphi\Rightarrow\psi)\Rightarrow(\varphi\Rightarrow\chi))$
+
+    $(\neg\psi\Rightarrow\neg\varphi)\Rightarrow(\varphi\Rightarrow\psi)$
+
+    PL: Pravidlo: z $\varphi$ odvoď $(\forall x)\varphi$
+
+    Distrib: $(\forall x)\varphi\Rightarrow\varphi(x/t)$
+
+    Spec: $(\forall x)(\varphi\Rightarrow\psi)\Rightarrow(\varphi\Rightarrow(\forall x) \psi)$
+
   \end{enumerate}
+
+  Lze zavést vyplývání jinak? - Alternativní syntaktické vyplývání - Gentzenovské dokazovací systémy - \uv{natural deduction}
+
+  Např.: V.Vychodil - prahová booleovská logika.
 \end{enumerate}
 
+\subsection{Co budeme zkoumat tento semestr}
+Neklasické logiky, ve kterých se uvažuje, že atomické formule mohou nabývat \underline{stupňů pravdivosti} - $0$\dots$1$ - mezní dva stupně.
 
-%\newpage
+  $0$\dots (plně) nepravdivý
+
+  $1$\dots (plně) pravdivý
+
+  $0 < a < 1$ \dots stupeň pravdivosti
+
+$\rightarrow$ \underline{Základní interpretace} $\rightarrow$ komparativní
+
+$||\varphi||_{a} = a, ||\psi||_{b}=b$ $a \leq n$ \dots $\varphi$ je méně pravdivá než $\psi$.
+
+$e: V\rightarrow L$ $\mathbb{L} = \langle L, \leq, 0, 1\rangle$ \dots ohraničená uspořádaná množina.
+
+$||\varphi||_{e} \in L$
+
+$\mathbb{L} = \langle L, \wedge, \vee, 0, 1\rangle$ \dots úplný svaz (zbytečně silné)
+
+$\mathbb{L} = \langle L, \wedge, \vee, 0, 1\rangle$ \dots svaz (ohraničený)
+
+Zbývá vyřešit, jak interpretovat logické spojky a které spojky vzít jako základní.
+
+Princip kompozicionality: $||\varphi\Rightarrow\psi||_{e} = ||\varphi||_{e}\rightarrow||\psi||_{e}$
+
+$\rightarrow$ - logická operace, která interpretuje $\Rightarrow$: 
+
+$\rightarrow : L\times L \rightarrow L$:
+ \begin{tabular}{l|*2c}
+     \bf $\rightarrow$ & 0 & 1  \\
+     \hline
+    0 & 1& 1 \\
+    1 & 0 & 1 \\
+   \end{tabular}
+
+60. léta Lotfi Askerzadeh - koncept fuzzy množiny - $\wedge\dots\min$, $\vee\dots\max$, $\neg \dots 1-a$
+
+J.A.Goguen - $\mathbb{L} = \langle L, \wedge, \vee, 0, 1\rangle$
+
+\underline{Modus ponens} - $\frac{\varphi\Rightarrow\psi,\varphi}{\psi}$ - 1. pohled $\frac{||\varphi\Rightarrow\psi||_{e}=1,||\varphi||_{e} = 1}{||\psi||_{e}=1}$
+
+2. pohled - min. dolní mez pravdivosti $\psi$ odvozujeme z min. dolních mezí předchozích dvou. $\frac{a\leq||\varphi\Rightarrow\psi||, b\leq ||\varphi||}{a\otimes b\leq||\psi||}$ \dots$\otimes\rightarrow\{0,1\}\dots$ pravdivostní funkce konjunkce.
+
+\underline{Pozorování}: $\Rightarrow\dots||\varphi\Rightarrow\psi|| = ||\varphi||\rightarrow||\psi||$
+
+  $\otimes\dots$ pravdivostní funkce konjunkce
+
+Jaký by měly mít vztah $(\otimes,\rightarrow)$ ? Chceme, aby zobecněné MP bylo korektní:
+
+Pokud $a\leq||\varphi\Rightarrow\psi||$ a $b\leq||\varphi||$ pak $a\otimes b \leq||\psi||$ pro $b=||\varphi||$ a $c=||\psi||$ použitím $||\varphi\Rightarrow\psi||=||\varphi||\rightarrow||\psi||=b\rightarrow c$
+
+Pokud $a\leq||\varphi\Rightarrow\psi|| = b\rightarrow c$, pak $a\otimes b\leq c$
+
+$a\leq b\rightarrow c$ pak $a\otimes b \leq c$
+
+Zobecněné MP mělo maximální možnou sílu - $b=||\varphi||, c=||\psi||$:
+
+Pokud $a\otimes b\leq||\psi||=c$, pak $a\leq||\varphi||\rightarrow||\psi||=b\rightarrow c$
+
+Dohromady: $$a\otimes b\leq c \text{ p.k. } a\leq b\rightarrow c \dots \text{ adjunkce}$$
+
+(Úplný) reziduovaný svaz $\mathbb{L} = \langle L, \wedge, \vee,\otimes,\rightarrow,0,1\rangle$
+
+$\langle L, \wedge,\vee, 0, 1\rangle \dots$(úplný) svaz
+
+$\langle L, \otimes, 1\rangle\dots\otimes\dots$binární operace, komutativní, asociativní, $a\otimes 1=a$
+
+$\rightarrow\dots$ binární operace, která splňuje adjunkci.
+
+\vspace{1cm}
+MP: $\frac{\varphi, \neg\varphi\vee\psi}{\psi} \rightarrow \frac{\varphi\vee\psi, \neg\varphi}{\psi}$ skrytý sém. význam: $\frac{1\leq||\varphi\vee\psi||, ||\varphi||\leq 0}{1\leq||\psi||}$
+
+$\frac{a\leq||\varphi\vee\psi||, ||\varphi||\leq b}{c\leq||\psi||}$, \hspace{2cm} $c=a\ominus b$ \hspace{2cm}   \begin{tabular}{l|*2c}
+     \bf $\ominus$ & 0 & 1  \\
+     \hline
+    0 & 0& 0 \\
+    1 & 1 & 0 \\
+   \end{tabular} $a \ominus b = \neg(a\rightarrow b)$
+
+$\vee\dots\oplus$\hspace{3cm} $\ominus\dots$ pravdivostní funkce abjunkce - \uv{neimplikace}
+
+Pro $b = ||\varphi||, c=||\psi||$ korektnost: $a\leq||\varphi\vee\psi|| = b\oplus c$ pak $a\ominus b\leq c$
+
+síla: $a\ominus b \leq ||\psi||=c$ pak $a\leq b\oplus c$
+
+$\oplus\dots$ komutativní, asociativní, neutrální vůči 0
+
+$\ominus\dots$ adjungovaná k $\oplus$
+
+$$a\ominus b\leq c \text{ p. k. } a\leq b \oplus c$$
 \renewcommand{\indexcolumns}{3}
 \printindex
 \end{document}
