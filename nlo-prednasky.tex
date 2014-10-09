@@ -28,14 +28,16 @@
 {:}
 {.5em}
 {}
+
 \theoremstyle{note}
-\newtheorem{dukaz}{Důkaz}
 \newtheorem{veta}{Věta}
 \newtheorem{definice}{Definice}
 \newtheorem{priklad}{Příklad}
 \newtheorem{poznamka}{Poznámka}
 \newtheorem{dusledek}{Důsledek}
 
+\newcommand{\pk}{\text{ p.k. }}
+\newcommand{\rlat}{\langle L, \wedge, \vee,\otimes,\rightarrow,0,1\rangle}
 
 \abstract{
 Tento dokument je pouze přepisem zápisků a poznámek
@@ -184,9 +186,9 @@ Zobecněné MP mělo maximální možnou sílu - $b=||\varphi||, c=||\psi||$:
 
 Pokud $a\otimes b\leq||\psi||=c$, pak $a\leq||\varphi||\rightarrow||\psi||=b\rightarrow c$
 
-Dohromady: $$a\otimes b\leq c \text{ p.k. } a\leq b\rightarrow c \dots \text{ adjunkce}$$
+Dohromady: $$a\otimes b\leq c \pk a\leq b\rightarrow c \dots \text{ adjunkce}$$
 
-(Úplný) reziduovaný svaz $\mathbb{L} = \langle L, \wedge, \vee,\otimes,\rightarrow,0,1\rangle$
+(Úplný) reziduovaný svaz $\mathbb{L} = \rlat$
 
 $\langle L, \wedge,\vee, 0, 1\rangle \dots$(úplný) svaz
 
@@ -215,6 +217,69 @@ $\oplus\dots$ komutativní, asociativní, neutrální vůči 0
 $\ominus\dots$ adjungovaná k $\oplus$
 
 $$a\ominus b\leq c \text{ p. k. } a\leq b \oplus c$$
+
+\section{Přednáška 2 - reziduované svazy}
+$\mathbb{L} = \rlat$
+
+$\langle L, \wedge,\vee, 0, 1\rangle \dots$ -- ohraničený nebo úplný svaz
+
+$\leq \dots a\leq b \pk a \wedge b = a \pk a \vee b = b$
+
+$\langle L, \otimes, 1\rangle\dots$ komutativní monoid (= asociativní, neutrální prvek -- 1)
+
+$\rightarrow\dots$ binární operace: $$a\otimes b\leq c \pk a\leq b\rightarrow c \text{ pro } \forall a,b,c$$
+
+\begin{veta}
+$a\otimes 0 = 0\otimes a$ tj. $\otimes$ se na hodnotách z $\{0,1\}$ chová stejně jako pravdivostní funkce klasické konjunkce.
+\end{veta}
+\begin{proof}
+$0\leq a \rightarrow 0$, protože $0$ je nejmenší z $L$.
+
+Z adjunkce: $0\otimes a\leq 0$ tj. $0\otimes a=0$. Opačná nerovnost plyne z komutativity $\otimes$
+\end{proof}
+\begin{veta}
+$a\rightarrow b = 1 \pk a\leq b$
+
+$1\rightarrow 0 = 0$ tj. $\rightarrow$ se na hodnotách $\{0,1\}$ chová jako klasická implikace.
+\end{veta}
+\begin{proof}
+$a\leq b \pk a\otimes 1\leq b\pk 1\leq a\rightarrow b$ ($\geq$ platí vždy - 1 je největší prvek)
+
+$1\rightarrow 0\leq 1\rightarrow 0$
+
+$1\otimes (1\rightarrow 0)\leq 0$ z neutrality $1\rightarrow 0\leq 0$ ($\geq$ platí vždy - 0 je nejmenší prvek.)
+\end{proof}
+\begin{veta}
+Reziduum $\rightarrow$ je jednoznačně dané součinem $\otimes$ a obráceně. (Ale nemusí vůbec existovat)
+\end{veta}
+\begin{proof}
+Nechť $\langle \otimes ,\rightarrow_{1}\rangle$ a $\langle \otimes ,\rightarrow_{2}\rangle$ jsou odjungované páry.
+
+$a\leq b\rightarrow_{1} c\pk a\otimes b\leq c\pk a\leq b\rightarrow_{2} c$
+
+Dále jasné: pro $a=b\rightarrow_{1} c$ vyplývá $b\rightarrow_{1} c\leq b\rightarrow_{2} c$
+
+\hspace{51pt}pro $a=b\rightarrow_{2} c$ vyplývá $b\rightarrow_{2} c\leq b\rightarrow_{1} c$
+\end{proof}
+
+\begin{priklad}
+Todo: Obrázek diamantu. Diamant $\mathbb{N}_{3}$ -- neexistuje žádný adjungovaný pár.
+\end{priklad}
+\begin{priklad}
+Todo: Obrázek 4hodnotové boolovy algebry. $x\otimes y=x\wedge y$
+
+$x\rightarrow y = x\vee y$ \dots 4hodnotová booleova algebra.
+\end{priklad}
+\begin{veta}
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\item $a\leq b \rightarrow(a\otimes b)$ \dots $a\otimes b\leq a\otimes b$
+\item $b\leq a \rightarrow(a\otimes b$ \dots z komutativity $\otimes$
+\item $a\otimes (a\rightarrow b) \leq b$ \dots $a\rightarrow b\leq a\rightarrow b$
+\item $a\leq (a\rightarrow b) \rightarrow b$
+\end{enumerate}
+\end{veta}
+
 \renewcommand{\indexcolumns}{3}
 \printindex
 \end{document}
