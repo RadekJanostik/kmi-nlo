@@ -238,6 +238,7 @@ $0\leq a \rightarrow 0$, protože $0$ je nejmenší z $L$.
 Z adjunkce: $0\otimes a\leq 0$ tj. $0\otimes a=0$. Opačná nerovnost plyne z komutativity $\otimes$
 \end{proof}
 \begin{veta}
+\label{v2}
 $a\rightarrow b = 1 \pk a\leq b$
 
 $1\rightarrow 0 = 0$ tj. $\rightarrow$ se na hodnotách $\{0,1\}$ chová jako klasická implikace.
@@ -280,6 +281,72 @@ $x\rightarrow y = x\vee y$ \dots 4hodnotová booleova algebra.
 \end{enumerate}
 \end{veta}
 
+\begin{dusledek}
+Tato věta + Věta \ref{v2}: $a\rightarrow (b\rightarrow (a\otimes b)) = 1$
+
+\hspace{5cm} $(a\otimes (a\rightarrow b))\rightarrow b=1$
+\end{dusledek}
+\begin{veta}
+$a\rightarrow (b\rightarrow c) = (a\otimes b)\rightarrow c = b\rightarrow(a\rightarrow c)$
+\end{veta}
+\begin{proof}
+\begin{enumerate}
+\item \begin{eqnarray}
+  a\rightarrow(b\rightarrow c)&\leq& a\rightarrow(b\rightarrow c) \nonumber\\
+  a\otimes(a\rightarrow(b\rightarrow c))&\leq& b\rightarrow c \nonumber\\
+  b\otimes a\otimes(a\rightarrow(b\rightarrow c))&\leq& c \nonumber\\
+  (a\otimes b)\otimes(a\rightarrow(b\rightarrow c))&\leq& c \nonumber\\
+  a\rightarrow(b\rightarrow c)&\leq& (a\otimes b)\rightarrow c\nonumber
+  \end{eqnarray}
+
+\item \begin{eqnarray}
+  (a\otimes b) \rightarrow c &\leq &(a\otimes b) \rightarrow c \nonumber\\
+  (a\otimes b)\otimes((a\otimes b) \rightarrow c) &\leq &  c \nonumber\\
+a\otimes((a\otimes b) \rightarrow c) &\leq & b\rightarrow c \nonumber\\
+(a\otimes b) \rightarrow c &\leq & a \rightarrow (b\rightarrow c) \nonumber
+  \end{eqnarray}
+  Dokázána první rovnost, druhá plyne z komutativity $\otimes$.
+\end{enumerate}
+\end{proof}
+\begin{veta}
+$\otimes$ je izotonní v obou argumentech. Pokud $a\leq b$ pak $a\otimes c\leq b\otimes c$. Tedy pokud $a_{1}\leq b_{1}$ a $a_{2}\leq b_{2}$ pak $a_{1}\otimes a_{2}\leq b_{1}\otimes b_{2}$
+\end{veta}
+\begin{proof}
+\begin{eqnarray}
+  b\otimes c &\leq&b\otimes c \nonumber\\
+  b &\leq& c\rightarrow (b\otimes c) \nonumber\\
+  \text{tj.:} a&\leq& c\rightarrow(b\otimes c) \text{  // z transitivity} \leq \nonumber\\
+  a\otimes c &\leq&b\otimes c\nonumber
+  \end{eqnarray}
+Druhý bod plyne dvojnásobným použitím předchozího: $a_{1}\otimes a_{2}\leq b_{1}\otimes a_{2}\leq b_{1}\otimes b_{2}$
+\end{proof}
+
+\begin{veta}
+$(a\rightarrow b) \otimes (b\rightarrow c)\leq a\rightarrow c$
+\end{veta}
+\begin{proof}
+Stačí ukázat, že platí: \begin{eqnarray} a\otimes(a\rightarrow b)\otimes(b\rightarrow c)&\leq& c\nonumber\\
+	      a\otimes(a\rightarrow b)&\leq&b\nonumber\\
+	      a\otimes(a\rightarrow b)\otimes(b\rightarrow c)&\leq&b\otimes(b\rightarrow c) \leq c\nonumber
+  \end{eqnarray}
+\end{proof}
+\begin{veta}
+$\rightarrow$ je antitonní v prvním argumentu a izotonní v druhém argumentu. Tj. pokud $a\leq b$ pak $b\rightarrow c \leq a\rightarrow c$, pokud $b\leq c$ pak $a\rightarrow b\leq a\rightarrow c$
+\end{veta}
+\begin{proof}
+Pokud $a\leq b$ z \begin{eqnarray} b\rightarrow c&\leq& b\rightarrow c\nonumber\\
+				 b\otimes (b\rightarrow c)&\leq& c\nonumber\\
+				 b &\leq& (b\rightarrow c)\rightarrow c\nonumber\\
+				 a &\leq& (b\rightarrow c)\rightarrow c\nonumber\\
+				 (b\rightarrow c)\otimes a &\leq&  c\nonumber\\
+				 b\rightarrow c &\leq&  a \rightarrow c\nonumber
+\end{eqnarray}
+Pokud $b\leq c$ z:\begin{eqnarray}a\rightarrow b &\leq&a\rightarrow b \nonumber\\
+				  a\otimes (a\rightarrow b) &\leq& b \nonumber\\
+				  a\otimes (a\rightarrow b) &\leq& c \nonumber\\
+				  (a\rightarrow b) &\leq& a\rightarrow c \nonumber
+\end{eqnarray}
+\end{proof}
 \renewcommand{\indexcolumns}{3}
 \printindex
 \end{document}
