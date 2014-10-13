@@ -347,6 +347,74 @@ Pokud $b\leq c$ z:\begin{eqnarray}a\rightarrow b &\leq&a\rightarrow b \nonumber\
 				  (a\rightarrow b) &\leq& a\rightarrow c \nonumber
 \end{eqnarray}
 \end{proof}
+\begin{veta}
+$a\rightarrow b$ je největší prvek množiny $\{c\in L | a\otimes c\leq b\}$
+
+\hspace{1.45cm}$a\otimes b$ je nejmenší prvek množiny $\{c\in L | a\leq b\rightarrow c\}$
+\end{veta}
+\begin{proof}
+\begin{enumerate}
+\item $a\rightarrow b$ patří do $\{a\otimes c\leq b\}$ protože $a\otimes(a\rightarrow b)\leq b$.
+  Nechť $a\otimes c \leq b\dots$ z adjunkce $\dots c\leq a\rightarrow b$
+
+\item Analogicky: $a\otimes b \in \{ c| a\leq b\rightarrow c\}$ protože $a\leq b\rightarrow(a\otimes b)$
+
+Pokud $a\leq b\rightarrow c$ pak $a\otimes b\leq c$
+\end{enumerate}
+\end{proof}
+\begin{veta}
+\begin{eqnarray}
+a\otimes \bigvee b_{i} &=&\bigvee(a\otimes b_{i}) \nonumber\\
+a\rightarrow\bigwedge b_{i} &=&\bigwedge(a\rightarrow b_{i})\nonumber\\
+\bigvee a_{i} \rightarrow b &=&\bigwedge(a_{i}\rightarrow b) \nonumber
+\end{eqnarray}
+-- 1. řádek: součin je distributivní přes $\bigvee$
+\begin{proof}
+\begin{enumerate}
+\item Z monotonie $\otimes$: $a\otimes \bigvee_{i} b_{i}  \geq a\otimes b_{i}$ (druhé $i$ je zvolené) platí pro $\forall i$ tj. $a\otimes\bigvee b_{i} \geq \bigvee(a\otimes b_{i})$
+
+Pravá strana:\begin{eqnarray}
+a\otimes b_{i}&\leq& \bigvee(a\otimes b_{i})\nonumber \\
+b_{i}&\leq&a\rightarrow\bigvee(a\otimes b_{i}) \text{ pro každé }i\nonumber \\
+\bigvee b_{i}&\leq&a\rightarrow\bigvee(a\otimes b_{i})\nonumber\\
+a\otimes \bigvee b_{i}&\leq&\bigvee(a\otimes b_{i})\nonumber
+\end{eqnarray}
+\item $a\rightarrow \bigwedge{i} \leq a\rightarrow b_{i}$ plat pro $\forall i$, tedy $a\rightarrow \bigwedge b_{i} \leq \bigwedge(a\rightarrow b_{i})$
+\begin{eqnarray}
+\bigwedge(a\rightarrow b_{i})&\leq& a\rightarrow b_{i} \text{ pro } \forall i\nonumber\\
+a\otimes \bigwedge(a\rightarrow b_{i})&\leq& b_{i} \text{ pro } \forall i\nonumber\\
+a\otimes \bigwedge(a\rightarrow b_{i})&\leq& \bigwedge b_{i} \nonumber\\
+\bigwedge(a\rightarrow b_{i})&\leq& a\rightarrow \bigwedge b_{i} \nonumber
+\end{eqnarray}
+\item \begin{eqnarray}
+\bigvee a_{i} \rightarrow b&\leq&a_{i}\rightarrow b \text{ pro } \forall i\nonumber\\
+\bigvee a_{i} \rightarrow b&\leq& \bigwedge(a_{i}\rightarrow b) \nonumber\\\nonumber\\
+\bigwedge(a_{i}\rightarrow b)&\leq& a_{i}\rightarrow b\nonumber\\
+a_{i}\otimes \bigwedge(a_{i}\rightarrow b)&\leq&b\nonumber\\
+a_{i} &\leq&(\bigwedge(a_{i}\rightarrow b)) \rightarrow b \text{ pro každé }i \nonumber\\
+\bigvee a_{i} &\leq&(\bigwedge(a_{i}\rightarrow b)) \rightarrow b \nonumber\\
+\bigwedge(a_{i}\rightarrow b) &\leq&\bigvee a_{i}\rightarrow b\text{   (dvojí adjunkce)} \nonumber
+\end{eqnarray}
+\end{enumerate}
+\end{proof}
+\end{veta}
+\begin{poznamka}
+$\vdash (\forall x)(\varphi\Rightarrow\psi)\Leftrightarrow(\varphi\Rightarrow(\forall x)\psi)$ -- protějšek 2.\footnote{Vůbec netuším, jak je to myšleno!}
+\end{poznamka}
+\begin{veta}
+\begin{eqnarray}
+a\otimes \bigwedge b_{i}&\leq&\bigwedge(a\otimes b_{i})\nonumber\\
+\bigvee(a\rightarrow b_{i})&\leq& a\rightarrow \bigvee b_{i}\nonumber\\
+\bigvee(a_{i}\rightarrow b)&\leq& \bigwedge a_{i}\rightarrow b\nonumber\\
+\bigwedge(a_{i}\rightarrow b_{i})&\leq&\bigwedge a_{i}\rightarrow\bigwedge b_{i}\nonumber\\
+\bigwedge(a_{i}\rightarrow b_{i})&\leq&\bigvee a_{i}\rightarrow \bigvee b_{i}\nonumber
+\end{eqnarray}
+\begin{proof}
+1-3 \uv{jednoduché}, 4: $\bigvee a_{i} \otimes \bigwedge(a_{i}\rightarrow b_{i})\leq a_{i}\otimes(a_{i}\rightarrow b_{i})\leq \bigwedge b_{i}$
+
+5: $\bigvee a_{i}\leq(a_{i}\rightarrow b_{i})\rightarrow b_{i}\leq \bigwedge(a_{i}\rightarrow b_{i})\rightarrow\bigvee b_{i}$
+\end{proof}
+\end{veta}
 \renewcommand{\indexcolumns}{3}
 \printindex
 \end{document}

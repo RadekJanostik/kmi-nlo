@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=cslatex 2014.2.3)  9 OCT 2014 17:02
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=cslatex 2014.2.3)  13 OCT 2014 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,16 +521,16 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 ] [1
 
-] [2] [3] [4]
+] [2] [3] [4] [5]
 No file nlo-prednasky.ind.
-[5] (./nlo-prednasky.aux) ) 
+[6] (./nlo-prednasky.aux) ) 
 Here is how much of TeX's memory you used:
- 2280 strings out of 494923
- 25813 string characters out of 3180952
+ 2299 strings out of 494923
+ 26000 string characters out of 3180952
  88378 words of memory out of 3000000
- 5534 multiletter control sequences out of 15000+200000
- 10545 words of font info for 31 fonts, out of 3000000 for 9000
+ 5546 multiletter control sequences out of 15000+200000
+ 14183 words of font info for 43 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
- 39i,11n,45p,290b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,11n,45p,290b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on nlo-prednasky.dvi (10 pages, 19236 bytes).
+Output written on nlo-prednasky.dvi (11 pages, 24244 bytes).
