@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=cslatex 2014.2.3)  13 OCT 2014 14:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=cslatex 2014.2.3)  16 OCT 2014 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,20 +475,20 @@ Writing index file nlo-prednasky.idx
 (./nlo-prednasky.aux)
 \openout1 = `nlo-prednasky.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 File: uplogo.eps Graphic file (type eps)
  <uplogo.eps> [-1
 
@@ -521,16 +521,16 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 ] [1
 
-] [2] [3] [4] [5]
+] [2] [3] [4] [5] [6] [7]
 No file nlo-prednasky.ind.
-[6] (./nlo-prednasky.aux) ) 
+[8] (./nlo-prednasky.aux) ) 
 Here is how much of TeX's memory you used:
- 2299 strings out of 494923
- 26000 string characters out of 3180952
+ 2308 strings out of 494923
+ 26088 string characters out of 3180952
  88378 words of memory out of 3000000
- 5546 multiletter control sequences out of 15000+200000
- 14183 words of font info for 43 fonts, out of 3000000 for 9000
+ 5554 multiletter control sequences out of 15000+200000
+ 15430 words of font info for 48 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
  39i,11n,45p,290b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on nlo-prednasky.dvi (11 pages, 24244 bytes).
+Output written on nlo-prednasky.dvi (13 pages, 30768 bytes).

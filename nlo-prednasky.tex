@@ -18,7 +18,6 @@
 \date{\today}
 
 \docinfo{Radek Janoštík}{KMI/NLO  -- Neklasické logiky}
-
 \newtheoremstyle{note}
 {15pt}
 {15pt}
@@ -308,7 +307,7 @@ a\otimes((a\otimes b) \rightarrow c) &\leq & b\rightarrow c \nonumber\\
   Dokázána první rovnost, druhá plyne z komutativity $\otimes$.
 \end{enumerate}
 \end{proof}
-\begin{veta}
+\begin{veta}\label{v6}
 $\otimes$ je izotonní v obou argumentech. Pokud $a\leq b$ pak $a\otimes c\leq b\otimes c$. Tedy pokud $a_{1}\leq b_{1}$ a $a_{2}\leq b_{2}$ pak $a_{1}\otimes a_{2}\leq b_{1}\otimes b_{2}$
 \end{veta}
 \begin{proof}
@@ -347,7 +346,7 @@ Pokud $b\leq c$ z:\begin{eqnarray}a\rightarrow b &\leq&a\rightarrow b \nonumber\
 				  (a\rightarrow b) &\leq& a\rightarrow c \nonumber
 \end{eqnarray}
 \end{proof}
-\begin{veta}
+\begin{veta}\label{v9}
 $a\rightarrow b$ je největší prvek množiny $\{c\in L | a\otimes c\leq b\}$
 
 \hspace{1.45cm}$a\otimes b$ je nejmenší prvek množiny $\{c\in L | a\leq b\rightarrow c\}$
@@ -362,7 +361,7 @@ $a\rightarrow b$ je největší prvek množiny $\{c\in L | a\otimes c\leq b\}$
 Pokud $a\leq b\rightarrow c$ pak $a\otimes b\leq c$
 \end{enumerate}
 \end{proof}
-\begin{veta}
+\begin{veta}\label{v10}
 \begin{eqnarray}
 a\otimes \bigvee b_{i} &=&\bigvee(a\otimes b_{i}) \nonumber\\
 a\rightarrow\bigwedge b_{i} &=&\bigwedge(a\rightarrow b_{i})\nonumber\\
@@ -413,6 +412,107 @@ a\otimes \bigwedge b_{i}&\leq&\bigwedge(a\otimes b_{i})\nonumber\\
 1-3 \uv{jednoduché}, 4: $\bigvee a_{i} \otimes \bigwedge(a_{i}\rightarrow b_{i})\leq a_{i}\otimes(a_{i}\rightarrow b_{i})\leq \bigwedge b_{i}$
 
 5: $\bigvee a_{i}\leq(a_{i}\rightarrow b_{i})\rightarrow b_{i}\leq \bigwedge(a_{i}\rightarrow b_{i})\rightarrow\bigvee b_{i}$
+\end{proof}
+\end{veta}
+\subsection{Proč nejde svaz $N_{3}$ reziduovat?}
+todo: obrázek diamantu N3
+\begin{proof}
+Sporem: Nechť existují $\otimes, \rightarrow$. Dle věty \ref{v10}:
+
+$a \otimes (b\vee c) = (a\otimes b) \vee (a\otimes c)$
+
+$a\otimes 1 = a$ \dots musí nastat alespoň jeden z případů:
+
+$a\otimes b = a$ nebo $a\otimes c = a$
+
+Spor s monotonií $\otimes b$
+
+$a\leq 1$\hspace{2em} $a\otimes b\leq 1\otimes b$
+
+$a \otimes b\leq b$ což je nesrovnatelné.
+\end{proof}
+\subsection{Příklady struktur reziduovaných svazů}
+$\mathbb{L} = \rlat$, kde $L = [0, 1]$, $\wedge\dots min, \vee\dots max$
+
+\begin{enumerate}
+\item{Łukasiewicz}: $a\otimes b = max(0, a+b-1)$
+
+\hspace{5em} $a\rightarrow b = min(1, 1-a+b)$
+\item{Gödel}: $a\otimes b = min(a, b)$
+
+\hspace{3em} $a\rightarrow b = \begin{cases} 1 & a\leq b \\ 
+b & \text{jinak} \end{cases} $
+\item{Goguenova (produktová)}: $a\otimes b = a\cdot b$
+
+  \hspace{5em} $a\rightarrow b \begin{cases} 1 & a\leq b \\ 
+b/a & \text{jinak} \end{cases} $
+\end{enumerate}
+
+\subsubsection{Protipříklady}
+$\mathbb{L}\dots$ Gödelova struktura na $[0, 1]$
+\begin{enumerate}
+\item $\{a_{i}\}_{i=0}^{\infty} \dots a_{i}\in L$
+
+  $\lim_{i\to\infty} = 0$ a $a_{i} > 0 \text{ pro každé} i$
+
+  $\bigwedge a_{i} = 0$ pro $b = 0$ platí:
+
+  $\bigwedge a_{i} \rightarrow b = 0 \rightarrow 0 = 1$
+  
+  $\bigvee (a_{i} \rightarrow b) = \bigvee b = b = 0$
+
+  $\bigvee (a_{i} \rightarrow b) \leq \bigwedge a_{i} \rightarrow b$
+
+\item $\{b\}_{i=0}^{\infty}\dots b_{i}\in L$
+
+  $\lim_{i\to\infty} b_{i} = a = 0.5$
+  
+  $b_{i} \leq a$
+
+  $\bigvee(a\rightarrow b_{i}) = \bigvee b_{i} = 0.5$
+
+  $a\rightarrow \bigvee b_{i} = 0.5 \rightarrow 0.5$ !!!
+
+  $\bigvee(a\rightarrow b_{i} < a\rightarrow \bigvee b_{i}$ !!!
+\end{enumerate}
+
+\begin{veta}
+Nechť $\mathbb{L} = \rlat$ je úplný svaz svaz a $\langle L,\otimes, 1\rangle$ je komutativní monoid. Pak jsou následující tvrzení ekvivalentní:
+\begin{eqnarray}
+\text{ k } \otimes \exists \rightarrow \text{ splňující adjunkci} \\
+\otimes \text{ je monotonní a } \{c\in L | a\otimes c\leq b\} \text{ má největší prvek}\\
+a\otimes\bigvee b_{i} = \bigvee (a\otimes b_{i})\\
+\otimes \text{ je adjungovaná k }\rightarrow \text{ definovaná:} a\rightarrow b =\bigvee\{c\in L|a\otimes c\leq b\} 
+\end{eqnarray}
+\begin{proof}
+Víme: (1) $\Rightarrow$ (2) // Věta \ref{v6}, Věta \ref{v9}
+
+(1) $\Rightarrow$(3) // Věta \ref{v10}
+
+(4) $\Rightarrow$ (1) // triviálně
+
+(2) $\Rightarrow$ (4): Položíme $a\rightarrow b = \bigvee\{c\in L|a\otimes c\leq b\} \text{ tj. } a\rightarrow b \in\{c\in L|a\otimes c\leq b\}$
+
+$a\otimes(a\rightarrow b\leq b$
+
+Když $a\otimes c\leq b$ pak $c\leq a\rightarrow b$ (z definice $\rightarrow$)
+
+Opačně: Nechť $c\leq a\rightarrow b$ z monotonie součinu (předpoklad): $a\otimes c\leq a\otimes (a\rightarrow b)\leq b$
+
+
+(3) $\Rightarrow$ (4): Monotonie $\otimes$ je důsledkem distributivity $\otimes$ k $\bigvee$
+
+$a\leq b \dots a\vee b = b$
+
+$c\otimes(a\vee b) = (c\otimes a) \vee (c\otimes b)$
+
+$c\otimes b\leq c\otimes a$
+
+$a\otimes c\leq b$ implikuje $c\leq a\rightarrow b$ z definice $\rightarrow$
+
+Pokud $c\leq a\rightarrow b$, pak $c\leq \bigvee\{d|a\otimes d\leq b\}$
+
+$a\otimes c\leq a\otimes \bigvee\{d|a\otimes d\leq b\} = \bigvee\{a\otimes d| a\otimes d\leq b\}$
 \end{proof}
 \end{veta}
 \renewcommand{\indexcolumns}{3}
